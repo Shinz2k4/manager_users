@@ -24,14 +24,14 @@ function query($sql,$data=[]) {
     }
     return $ketqua;
 }
-
-function insert($table,$data) {
+ 
+function insert($table, $data) {
     $key = array_keys($data);
-    $truong = implode(',',$key);
-    $valuetb = ':'.implode(',:',$key);
+    $truong = implode(',', $key);
+    $valuetb = ':' . implode(', :', $key);
 
-    $sql = 'INSERT INTO '.$table.'('.$truong.')'.'VALUES'.$valuetb.')';
+    $sql = 'INSERT INTO ' . $table . '(' . $truong . ') VALUES (' . $valuetb . ')';
 
-    $kq = query($sql,$data);
+    $kq = query($sql, $data);
     return $kq;
 }
